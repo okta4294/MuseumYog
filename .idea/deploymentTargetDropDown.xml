@@ -5,6 +5,15 @@
       <entry key="app">
         <State />
       </entry>
+      <entry key="splash">
+        <State />
+      </entry>
+      <entry key="splash2">
+        <State />
+      </entry>
+      <entry key="splash3">
+        <State />
+      </entry>
     </value>
   </component>
 </project>

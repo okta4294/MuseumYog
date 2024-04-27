@@ -1,0 +1,186 @@
+package com.example.museumyog
+
+import android.annotation.SuppressLint
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import com.example.museumyog.ui.theme.MuseumYogTheme
+import com.example.museumyog.ui.theme.greenku
+import com.example.museumyog.ui.theme.greyku
+import com.example.museumyog.ui.theme.jogja
+import com.example.museumyog.ui.theme.worksans
+import com.example.museumyog.ui.theme.worksansbold
+
+@SuppressLint("CustomSplashScreen")
+class splashScreen3: ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContent {
+            MuseumYogTheme {
+                splash3()
+            }
+        }
+    }
+}
+@Preview
+@Composable
+private fun splash3(){
+    Box(modifier = Modifier.fillMaxSize(),
+        Alignment.TopCenter) {
+        Column {
+            Spacer(modifier = Modifier.height(30.dp))
+            Image(
+                painter = painterResource(id = R.drawable.logo),
+                contentDescription = "Ini logo",
+                modifier = Modifier.size(120.dp))
+        }
+    }
+    Box(modifier = Modifier.fillMaxSize(),
+        Alignment.TopCenter){
+        Column {
+            Spacer(modifier = Modifier.height(70.dp))
+            Image(painter = painterResource(id = R.drawable.siluet_museum),
+                contentDescription ="Siluet Museum",
+                modifier = Modifier.size(450.dp))
+        }
+        Column {
+            Spacer(modifier = Modifier.height(144.dp))
+            Image(painter = painterResource(id = R.drawable.pasar),
+                contentDescription ="pasar gak sie?",
+                modifier = Modifier.size(450.dp))
+        }
+    }
+    Box(modifier = Modifier.fillMaxSize(),
+        Alignment.TopStart){
+        Column {
+            Spacer(modifier = Modifier.height(30.dp))
+            Image(painter = painterResource(id = R.drawable.awan_samping),
+                contentDescription = "awan doang sih",
+                modifier = Modifier.size(120.dp))
+        }
+        Column {
+            Image(painter = painterResource(id = R.drawable.bendera_samping),
+                contentDescription = "bendera",
+                modifier = Modifier.size(120.dp))
+        }
+    }
+    Box(modifier = Modifier.fillMaxSize(),
+        Alignment.TopEnd){
+        Column {
+            Spacer(modifier = Modifier.height(150.dp))
+            Image(painter = painterResource(id = R.drawable.awan3),
+                contentDescription = "awan doang sih",
+                modifier = Modifier.size(120.dp))
+        }
+        Column {
+            Image(painter = painterResource(id = R.drawable.bendera_samping2),
+                contentDescription = "bendera",
+                modifier = Modifier.size(120.dp))
+        }
+    }
+    Box(modifier = Modifier.fillMaxSize(),
+    Alignment.TopCenter){
+        Column {
+            Spacer(modifier = Modifier.height(400.dp))
+            Image(
+                painter = painterResource(id = R.drawable.bayangan),
+                contentDescription = "bayangan",
+                modifier = Modifier.size(300.dp))
+        }
+    }
+    Box(modifier = Modifier.fillMaxSize(),
+        Alignment.TopCenter) {
+        Column {
+            Spacer(modifier = Modifier.height(200.dp))
+            Image(
+                painter = painterResource(id = R.drawable.laki_perempuan),
+                contentDescription = "lanang wadon",
+                modifier = Modifier.size(350.dp))
+
+        }
+    }
+    Box(modifier = Modifier.fillMaxSize(),
+        Alignment.TopEnd){
+        Column {
+            Spacer(modifier = Modifier.height(460.dp))
+            Image(
+                painter = painterResource(id = R.drawable.tanaman4),
+                contentDescription = "tanaman",
+                modifier = Modifier.size(100.dp))
+
+        }
+    }
+    Box(modifier = Modifier.fillMaxSize(),
+        Alignment.TopStart){
+        Column {
+            Spacer(modifier = Modifier.height(500.dp))
+            Image(
+                painter = painterResource(id = R.drawable.tanaman3),
+                contentDescription = "tanaman",
+                modifier = Modifier.size(45.dp))
+        }
+    }
+    Box(modifier = Modifier.fillMaxSize(),
+        Alignment.TopCenter){
+        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+            Spacer(modifier = Modifier.height(580.dp))
+            Text(text = "Booking Tiket & Rasakan ",
+                color = greenku,
+                fontSize = 25.sp,
+                fontFamily = worksansbold
+            )
+            Text(text = "Event Seru di Museum!",
+                color = greenku,
+                fontSize = 25.sp,
+                fontFamily = worksansbold
+            )
+            Spacer(modifier = Modifier.height(8.dp))
+            Text(text = "Dengan MuseumYog, Booking tiket",            color = greyku,
+                fontSize = 17.sp,
+                fontFamily = worksans
+            )
+            Text(text = "dengan mudah dan dapatkan info",
+                color = greyku,
+                fontSize = 17.sp,
+                fontFamily = worksans
+            )
+            Text(text = "terupdate event seru di seluruh",
+                color = greyku,
+                fontSize = 17.sp,
+                fontFamily = worksans
+            )
+            Text(text = "Museum Yogyakarta!",
+                color = greyku,
+                fontSize = 17.sp,
+                fontFamily = worksans
+            )
+            Spacer(modifier = Modifier.height(50.dp))
+            Text(text = "CopyRight By Swakarya 2024",
+                color = greyku,
+                fontFamily = worksans)
+            Spacer(modifier = Modifier.height(8.dp))
+            Text(text = "Version 1.0.0",
+                color = greyku,
+                fontFamily = worksans)
+
+        }
+    }
+}
