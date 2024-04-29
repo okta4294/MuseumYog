@@ -6,12 +6,16 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -25,6 +29,7 @@ import com.example.museumyog.ui.theme.MuseumYogTheme
 import com.example.museumyog.ui.theme.jogja
 import com.example.museumyog.ui.theme.worksans
 import com.example.museumyog.ui.theme.worksansbold
+import org.intellij.lang.annotations.JdkConstants.HorizontalAlignment
 
 @SuppressLint("CustomSplashScreen")
 class splashScreen2: ComponentActivity() {
@@ -94,7 +99,22 @@ private fun splash2(){
                 color = Color.White,
                 fontSize = 15.sp,
                 fontFamily = worksans)
-            Spacer(modifier = Modifier.height(50.dp))
+            Spacer(modifier = Modifier.height(40.dp))
+            Row(horizontalArrangement = Arrangement.Center,
+                verticalAlignment = Alignment.CenterVertically){
+                Image(painter = painterResource(id = R.drawable.elipse),
+                    contentDescription ="Lingkaran doang",
+                    modifier = Modifier.size(15.dp))
+                Spacer(modifier = Modifier.width(4.dp))
+                Image(painter = painterResource(id = R.drawable.lingkaran),
+                    contentDescription ="Lingkaran doang",
+                    modifier = Modifier.size(10.dp))
+                Spacer(modifier = Modifier.width(4.dp))
+                Image(painter = painterResource(id = R.drawable.lingkaran),
+                    contentDescription ="Lingkaran doang",
+                    modifier = Modifier.size(10.dp))
+            }
+            Spacer(modifier = Modifier.height(15.dp))
             Text(text = "CopyRight By Swakarya 2024",
                 color = Color.White,
                 fontFamily = worksans)
