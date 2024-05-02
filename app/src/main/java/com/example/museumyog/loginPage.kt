@@ -2,7 +2,6 @@ package com.example.museumyog
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.widget.ImageButton
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.BorderStroke
@@ -44,6 +43,7 @@ import androidx.compose.ui.text.style.TextDirection
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import com.example.museumyog.ui.theme.MuseumYogTheme
 import com.example.museumyog.ui.theme.greenku
 import com.example.museumyog.ui.theme.greyku
@@ -51,7 +51,7 @@ import com.example.museumyog.ui.theme.worksans
 import com.example.museumyog.ui.theme.worksansbold
 
 @SuppressLint("CustomSplashScreen")
-class loginPage: ComponentActivity() {
+object loginPage: ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent(){

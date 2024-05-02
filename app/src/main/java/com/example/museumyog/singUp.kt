@@ -48,7 +48,7 @@ import com.example.museumyog.ui.theme.worksansbold
 
 
 @SuppressLint("CustomSplashScreen")
-class singup: ComponentActivity() {
+object singup: ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent(){
@@ -170,5 +170,7 @@ private fun singUp(){
         }
     }
 }
+
+
 
 
