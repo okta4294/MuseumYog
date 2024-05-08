@@ -1,10 +1,7 @@
-package com.example.museumyog
+package com.example.museumyog.presentation.onboarding
 
-import android.annotation.SuppressLint
-import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -13,41 +10,25 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.paddingFrom
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.museumyog.ui.theme.MuseumYogTheme
+import androidx.navigation.NavHostController
+import com.example.museumyog.R
 import com.example.museumyog.ui.theme.greenku
 import com.example.museumyog.ui.theme.greyku
-import com.example.museumyog.ui.theme.jogja
 import com.example.museumyog.ui.theme.worksans
 import com.example.museumyog.ui.theme.worksansbold
 
-@SuppressLint("CustomSplashScreen")
-class splashScreen3: ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContent {
-            MuseumYogTheme {
-                splash3()
-            }
-        }
-    }
-}
-@Preview
 @Composable
-private fun splash3(){
+fun onboarding2(navController: NavHostController) {
     Box(modifier = Modifier.fillMaxSize(),
         Alignment.TopCenter) {
         Column {
@@ -58,7 +39,8 @@ private fun splash3(){
                 modifier = Modifier.size(120.dp))
         }
     }
-    Box(modifier = Modifier.fillMaxSize(),
+    Box(modifier = Modifier.fillMaxSize()
+        .clickable { navController.navigate("onboarding3") },
         Alignment.TopCenter){
         Column {
             Spacer(modifier = Modifier.height(70.dp))
@@ -102,7 +84,7 @@ private fun splash3(){
         }
     }
     Box(modifier = Modifier.fillMaxSize(),
-    Alignment.TopCenter){
+        Alignment.TopCenter){
         Column {
             Spacer(modifier = Modifier.height(400.dp))
             Image(
@@ -178,7 +160,7 @@ private fun splash3(){
                 fontSize = 17.sp,
                 fontFamily = worksans
             )
-            Spacer(modifier = Modifier.height(30.dp))
+            Spacer(modifier = Modifier.height(25.dp))
             Row(horizontalArrangement = Arrangement.Center,
                 verticalAlignment = Alignment.CenterVertically){
                 Image(painter = painterResource(id = R.drawable.lingkaran),
@@ -196,11 +178,13 @@ private fun splash3(){
             Spacer(modifier = Modifier.height(10.dp))
             Text(text = "CopyRight By Swakarya 2024",
                 color = greyku,
-                fontFamily = worksans)
-            Spacer(modifier = Modifier.height(8.dp))
+                fontFamily = worksans
+            )
+            Spacer(modifier = Modifier.height(2.dp))
             Text(text = "Version 1.0.0",
                 color = greyku,
-                fontFamily = worksans)
+                fontFamily = worksans
+            )
 
         }
     }

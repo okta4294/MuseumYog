@@ -1,19 +1,15 @@
-package com.example.museumyog
+package com.example.museumyog.presentation.onboarding
 
-import android.annotation.SuppressLint
-import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Text
@@ -23,29 +19,18 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.museumyog.ui.theme.MuseumYogTheme
+import androidx.navigation.NavController
+import androidx.navigation.NavHostController
+import com.example.museumyog.R
 import com.example.museumyog.ui.theme.jogja
 import com.example.museumyog.ui.theme.worksans
 import com.example.museumyog.ui.theme.worksansbold
-import org.intellij.lang.annotations.JdkConstants.HorizontalAlignment
 
-@SuppressLint("CustomSplashScreen")
-class splashScreen2: ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContent {
-            MuseumYogTheme {
-                splash2()
-            }
-        }
-    }
-}
-@OptIn(ExperimentalFoundationApi::class)
-@Preview
 @Composable
-private fun splash2(){
+fun onboarding1(navController: NavController) {
     Box(modifier = Modifier.fillMaxSize(),
         Alignment.TopCenter){
         Column {
@@ -55,7 +40,8 @@ private fun splash2(){
                 modifier = Modifier.size(120.dp))
         }
     }
-    Box(modifier = Modifier.fillMaxSize(),
+    Box(modifier = Modifier.fillMaxSize()
+        .clickable {navController.navigate("onboarding2")},
         contentAlignment = Alignment.TopCenter){
         Column {
             Spacer(modifier = Modifier.height(70.dp))
@@ -64,11 +50,11 @@ private fun splash2(){
                 modifier = Modifier.size(450.dp))
 
         }
-        Column {
+        Column{
             Spacer(modifier = Modifier.height(462.dp))
             Image(painter = painterResource(id = R.drawable.kotak),
                 contentDescription ="Kotak",
-                modifier = Modifier.size(450.dp))
+                modifier = Modifier.fillMaxSize())
         }
         Column {
             Spacer(modifier = Modifier.height(160.dp))
@@ -81,25 +67,30 @@ private fun splash2(){
             Text(text = "Yogyakarta",
                 color = Color.White,
                 fontSize = 50.sp,
-                fontFamily = jogja)
+                fontFamily = jogja
+            )
             Text(text = "Penuh Dengan Cerita!",
                 color = Color.White,
                 fontSize = 20.sp,
-                fontFamily = worksansbold)
+                fontFamily = worksansbold
+            )
             Spacer(modifier = Modifier.height(8.dp))
             Text(text = "Temukan museum terpopuler dan",
                 color = Color.White,
                 fontSize = 15.sp,
-                fontFamily = worksans)
+                fontFamily = worksans
+            )
             Text(text = "historis  Yogyakarta di sekitarmu",
                 color = Color.White,
                 fontSize = 15.sp,
-                fontFamily = worksans)
+                fontFamily = worksans
+            )
             Text(text = "dengan mudah dan lengkap! ",
                 color = Color.White,
                 fontSize = 15.sp,
-                fontFamily = worksans)
-            Spacer(modifier = Modifier.height(40.dp))
+                fontFamily = worksans
+            )
+            Spacer(modifier = Modifier.height(35.dp))
             Row(horizontalArrangement = Arrangement.Center,
                 verticalAlignment = Alignment.CenterVertically){
                 Image(painter = painterResource(id = R.drawable.elipse),
@@ -117,11 +108,13 @@ private fun splash2(){
             Spacer(modifier = Modifier.height(15.dp))
             Text(text = "CopyRight By Swakarya 2024",
                 color = Color.White,
-                fontFamily = worksans)
-            Spacer(modifier = Modifier.height(8.dp))
+                fontFamily = worksans
+            )
+            Spacer(modifier = Modifier.height(2.dp))
             Text(text = "Version 1.0.0",
                 color = Color.White,
-                fontFamily = worksans)
+                fontFamily = worksans
+            )
         }
 
     }
