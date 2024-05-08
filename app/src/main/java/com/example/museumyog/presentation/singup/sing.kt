@@ -1,14 +1,6 @@
-package com.example.museumyog
+package com.example.museumyog.presentation.singup
 
-import android.annotation.SuppressLint
-import android.content.Intent
-import android.os.Bundle
-import android.widget.Toast
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -21,62 +13,29 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextDecoration
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.core.content.ContextCompat.startActivity
-import androidx.navigation.compose.rememberNavController
-import com.example.museumyog.ui.theme.MuseumYogTheme
+import androidx.navigation.NavHostController
+import com.example.museumyog.R
+import com.example.museumyog.app.component.FieldPassword
+import com.example.museumyog.app.component.FieldUsername
+import com.example.museumyog.app.component.Fullname
 import com.example.museumyog.ui.theme.coklatku
 import com.example.museumyog.ui.theme.greenku
-import com.example.museumyog.ui.theme.greyku
 import com.example.museumyog.ui.theme.worksans
 import com.example.museumyog.ui.theme.worksansbold
 
-
-@SuppressLint("CustomSplashScreen")
-object singup: ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContent(){
-            MuseumYogTheme {
-                singUp()
-            }
-        }
-    }
-}
 @Composable
-fun Fullname() {
-    var name by remember { mutableStateOf("") }
+fun singUp(navController: NavHostController){
 
-    OutlinedTextField(
-        value = name,
-        modifier = Modifier
-            .size(width = 350.dp, height = 60.dp)
-            .border(
-                BorderStroke(width = 3.dp, color = greyku),
-                shape = RoundedCornerShape(20)
-            ),
-        onValueChange = { name = it },
-        placeholder = { Text(text = "Username") }
-    )
-}
-@Preview
-@Composable
-private fun singUp(){
     Box(modifier = Modifier.fillMaxSize(),
         Alignment.TopCenter){
         Image(painter = painterResource(id = R.drawable.perempuan_dan_background),
@@ -123,7 +82,7 @@ private fun singUp(){
             Spacer(modifier = Modifier.height(10.dp))
             FieldPassword()
             Spacer(modifier = Modifier.height(40.dp))
-            Button(onClick = { /*TODO*/ },
+            Button(onClick = {  },
                 colors = ButtonDefaults.buttonColors(greenku),
                 shape = RoundedCornerShape(10.dp),
                 modifier = Modifier.size(width = 350.dp, height = 60.dp))
@@ -161,7 +120,7 @@ private fun singUp(){
             Spacer(modifier = Modifier.height(790.dp))
             Row (verticalAlignment = Alignment.CenterVertically){
                 Text(text = "Sudah punya akun?")
-                TextButton(onClick = { }) {
+                TextButton(onClick = { navController.navigate("login")}) {
                     Text(text = "Masuk",
                         color = greenku,
                         textDecoration = TextDecoration.Underline)
@@ -170,7 +129,3 @@ private fun singUp(){
         }
     }
 }
-
-
-
-

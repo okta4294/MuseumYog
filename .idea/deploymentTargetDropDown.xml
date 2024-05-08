@@ -2,6 +2,9 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
+      <entry key="MainActivity">
+        <State />
+      </entry>
       <entry key="app">
         <State />
       </entry>
@@ -11,10 +14,10 @@
       <entry key="singUp">
         <State />
       </entry>
-      <entry key="singUp2">
+      <entry key="singUp (1)">
         <State />
       </entry>
-      <entry key="splash4">
+      <entry key="singUp2">
         <State />
       </entry>
     </value>

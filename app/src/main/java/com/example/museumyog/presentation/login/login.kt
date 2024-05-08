@@ -1,12 +1,7 @@
-package com.example.museumyog
+package com.example.museumyog.presentation.login
 
-import android.annotation.SuppressLint
-import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -17,91 +12,29 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.FilledIconButton
-import androidx.compose.material3.Icon
-import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
-import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.semantics.Role.Companion.Button
-import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.style.TextDecoration
-import androidx.compose.ui.text.style.TextDirection
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
-import com.example.museumyog.ui.theme.MuseumYogTheme
+import com.example.museumyog.R
+import com.example.museumyog.app.component.FieldPassword
+import com.example.museumyog.app.component.FieldUsername
 import com.example.museumyog.ui.theme.greenku
 import com.example.museumyog.ui.theme.greyku
 import com.example.museumyog.ui.theme.worksans
 import com.example.museumyog.ui.theme.worksansbold
 
-@SuppressLint("CustomSplashScreen")
-object loginPage: ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContent(){
-            MuseumYogTheme {
-                login()
-            }
-        }
-    }
-}
-
 @Composable
-fun FieldPassword() {
-    var password by remember { mutableStateOf("") }
-
-    OutlinedTextField(
-        value = password,
-        modifier = Modifier
-            .size(width = 350.dp, height = 60.dp)
-            .border(
-                BorderStroke(width = 3.dp, color = greyku),
-                shape = RoundedCornerShape(20)
-            ),
-        leadingIcon = { Icon(imageVector = Icons.Default.Lock,
-            contentDescription = null)},
-        onValueChange = { password = it },
-        placeholder = { Text(text = "Password") }
-    )
-}
-
-
-@Composable
-fun FieldUsername() {
-    var username by remember { mutableStateOf("") }
-
-    OutlinedTextField(
-        value = username,
-        modifier = Modifier
-            .size(width = 350.dp, height = 60.dp)
-            .border(
-                BorderStroke(width = 3.dp, color = greyku),
-                shape = RoundedCornerShape(20)
-            ),
-        onValueChange = { username = it },
-        placeholder = { Text(text = "Username") }
-    )
-}
-
-@Preview
-@Composable
-fun login() {
+fun login(navController: NavHostController) {
     Box(modifier = Modifier.fillMaxSize(),
         Alignment.TopCenter){
         Image(painter = painterResource(id = R.drawable.laki_dan_backgroud),
@@ -162,7 +95,8 @@ fun login() {
                 modifier = Modifier.size(width = 350.dp, height = 60.dp))
             {
                 Text(text = "Masuk Sebagai Tamu",
-                    fontFamily = worksansbold)
+                    fontFamily = worksansbold
+                )
             }
             Spacer(modifier = Modifier.height(8.dp))
             Text(text = "Atau masuk dengan")
@@ -194,7 +128,7 @@ fun login() {
                 Spacer(modifier = Modifier.height(790.dp))
                 Row (verticalAlignment = Alignment.CenterVertically){
                     Text(text = "Belum punya akun?")
-                    TextButton(onClick = { /*TODO*/ }) {
+                    TextButton(onClick = { navController.navigate("singup") }) {
                         Text(text = "Daftar sekarang",
                             color = greenku,
                             textDecoration = TextDecoration.Underline)
