@@ -29,7 +29,6 @@ import com.example.museumyog.ui.theme.greyku
 import com.example.museumyog.ui.theme.worksans
 import com.example.museumyog.ui.theme.worksansbold
 
-@Preview
 @Composable
 fun onboarding3(navController: NavHostController) {
     Box(modifier = Modifier.fillMaxSize(),
