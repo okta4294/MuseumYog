@@ -2,19 +2,19 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
-      <entry key="MainActivity">
+      <entry key="CustomDatePicker">
+        <State />
+      </entry>
+      <entry key="CustomDatePickerPreview">
         <State />
       </entry>
       <entry key="app">
         <State />
       </entry>
+      <entry key="calendar">
+        <State />
+      </entry>
       <entry key="dropdown">
-        <State />
-      </entry>
-      <entry key="listpayment2">
-        <State />
-      </entry>
-      <entry key="listpayment3">
         <State />
       </entry>
       <entry key="pre">

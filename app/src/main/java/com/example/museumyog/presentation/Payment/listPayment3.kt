@@ -56,13 +56,14 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.example.museumyog.component.CustomDatePicker
+import com.example.museumyog.component.SharedVariables
 import com.example.museumyog.component.SharedVariables.admin
 import com.example.museumyog.component.SharedVariables.bankpay
 import com.example.museumyog.component.SharedVariables.pay
 import com.example.museumyog.component.SharedVariables.total
 import com.example.museumyog.component.SharedVariables.total1
 import com.example.museumyog.component.TicketShape
-import com.example.museumyog.component.dropdown
 import com.example.museumyog.component.getDummyList
 import com.example.museumyog.component.voucher
 import com.example.museumyog.ui.theme.greenku
@@ -135,7 +136,10 @@ fun listpayment3(navController: NavHostController) {
                         modifier = Modifier.padding(10.dp))
                     Box(modifier = Modifier.fillMaxWidth(),
                         Alignment.Center) {
-                        dropdown()
+                        CustomDatePicker(
+                            value = SharedVariables.date.value,
+                            onValueChange = { SharedVariables.date.value = it}
+                        )
                     }
                     Spacer(modifier = Modifier.height(20.dp))
                     Row(modifier = Modifier.padding(10.dp)) {
