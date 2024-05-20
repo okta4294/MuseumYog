@@ -13,10 +13,12 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
+import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.museumyog.component.SharedVariables.date
@@ -38,20 +40,31 @@ fun calender(
 ) {
 
     val open = remember { mutableStateOf(false)}
+    val customColors = lightColorScheme(
+        primary = greenku,
+        secondary = greenku,
+        secondaryContainer = greenku,
+        onPrimary = Color.White,
+        onSecondary = Color.White
+    )
 
     if (open.value) {
-        CalendarDialog(
+        MaterialTheme(
+            colorScheme = customColors
+        ){CalendarDialog(
             state = rememberUseCaseState(visible = true, true, onCloseRequest = { open.value = false } ),
             config = CalendarConfig(
                 yearSelection = true,
                 style = CalendarStyle.MONTH,
-            ),
+
+                ),
             selection = CalendarSelection.Date(
                 selectedDate = SelectedDate.value
             ) { newDate ->
                 SelectedDate.value = newDate
             },
         )
+        }
     }
 
     OutlinedTextField(
