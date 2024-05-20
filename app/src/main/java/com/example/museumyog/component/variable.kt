@@ -42,4 +42,3 @@ object SharedVariables {
     val SelectedDate = mutableStateOf(LocalDate.now())
     val date = mutableStateOf(LocalDate.now())
 }
-

@@ -32,7 +32,7 @@ import java.time.format.DateTimeFormatter
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun CustomDatePicker(
+fun calender(
     value: LocalDate,
     onValueChange: (LocalDate) -> Unit
 ) {
@@ -70,7 +70,7 @@ fun CustomDatePicker(
 @Preview(showBackground = true)
 @Composable
 fun CustomDatePickerPreview(){
-        CustomDatePicker(
+        calender(
             value = date.value,
             onValueChange = {date.value = it}
         )
